@@ -1,0 +1,43 @@
+
+
+
+<body>
+
+   <div id="login">
+
+   		<fieldset>
+		
+			<legend><h4>&nbsp;&nbsp;&nbsp; Log In: </h4></legend>
+
+          		<form name="form" ng-submit="vm.login()" role="form">
+       
+            	    <div id="text">
+
+                	    <div ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+	                	   <label for="username">Username</label>
+			        	   <input  name="username" ng-model="vm.username" id="username" class="buggy" type="text" placeholder="enter username" required><span ng-show="form.username.$dirty && form.username.$error.required">Username is required</span><br><br>
+		        	    </div>
+		       
+		        	    <div ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+		            	     <label for="password">Password</label>
+			        	     <input name="password" class="buggy" type="password" id="Password" placeholder="enter password" required ng-model="vm.password"/><span ng-show="form.password.$dirty && form.password.$error.required" >Password is required</span>
+		        	    </div>
+		    	    
+		    	    </div><br><br><br>
+		    	    
+
+					<div>
+		            	<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" id="button">Log In</button><br><br>
+						 <strong>Don't have an account? <a href="#!/register">Register</a></strong><br>
+       				</div>
+
+           		 </form>
+         </fieldset> 
+	 </div>
+ </body>
+
+
+
+
+  
+  

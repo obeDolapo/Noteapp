@@ -1,0 +1,64 @@
+﻿
+<body>
+ 
+   <div class="sweeper">
+<fieldset>
+        <legend><h4>&nbsp;&nbsp;&nbsp; Sign Up:  </h4></legend>
+       
+        <form  name="form" ng-submit="vm.register()" role="form">
+		
+	    
+	
+                 <div ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+
+                        <label for="firstName">First Name</label>
+                        <input class="buggy" type="text" name="firstname" id="firstName" placeholder="ex., Dolapo" ng-model="vm.user.firstName" required="true"/>
+                       
+                        </div></br>
+			
+		         <div ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required}">
+                        <label for="lastName">Last Name</label>
+                        <input class="buggy" type="text" id="lastName" placeholder="ex., Obe" ng-model="vm.user.lastName" required/>
+                         
+                        </div></br>
+
+                        <div ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            			<label for="username">Username</label>
+            			<input type="text" name="username" id="username" class="buggy" ng-model="vm.user.username" placeholder="Enter Username" required/></div></br>
+
+                <div ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+
+                        <label for="email">Email </label>
+                        <input class="buggy" type="email" id="email" ng-model="vm.user.email" placeholder="ex., johndoe@jv.com" required/>
+                        </div></br>
+
+    
+		         <div >
+                        <label for="password">Password</label>
+                        <input class="buggy" name="password" type="password" id="password" placeholder="enter password" required ng-model="vm.user.password"  required/>
+                        
+                        </div></br>
+
+
+    
+
+			     </select></br></br>
+			  
+			    <button type="submit"  ng-disabled="form.$invalid || vm.dataLoading" id="button"> Get Started </button> 
+	
+			  
+
+         </form></br></br></br>
+			   <strong>Already have an account?<a href="#!/login">Login</a></strong><br> 
+
+			 
+     </div>
+        
+   </fieldset>
+
+    </div>
+ </body>
+
+ 
+
+   
