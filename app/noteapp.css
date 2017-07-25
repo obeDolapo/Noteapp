@@ -5,19 +5,21 @@ body {
 } 
 
 #login {
-	height: 400px;
-	width: 400px;
+	height: 300px;
+	width: 450px;
 	border-radius: 10px;
 	background-color: #e5e4d7;
-	position:center;
-	display: inline-block;
+	
+	 margin-left: auto;
+	 margin-right: auto;
+     text-align: center;
 	line-height: 10px;
 	font-size: 18px;
 	padding-left: 5px;
 	 box-shadow:0 4px 10px 4px ;
 	 border-top: 30px;
-	  margin-top: 50px;
-	  padding-top: 10px;
+	  margin-top: 60px;
+	  padding-top: 20px;
 	  font-size: 18px;
 	  font-family: Verdana;
 
@@ -27,18 +29,18 @@ body {
 .sweeper {
 	 background-color: #e5e4d7; 
 	 height: 628px;
-	 width: 480px;
+	 width: 470px;
 	 border-radius: 6px;
 	 position: center;
 	 font-family: Verdana;
 	 font-size: 15px;
-	 display: inline-block;
+	 
 	 box-shadow:0 4px 10px 4px ;
-	 display:block;
+	
 	 margin-left: auto;
 	 margin-right: auto;
-	 margin-top: 50px;
-	 padding-top: 10px;
+	 margin-top: 68px;
+	 padding-top: 20px;
 	
 }
 
@@ -54,23 +56,20 @@ body {
 
 label{
 	display: inline-block;
-	width: 95px;
+	width: 115px;
 	line-height: 10px;
 	 margin-top: 25px;
+	 margin-left: 15px
 
 }
-
-
 
 
 input {
 	display: inline-block;
-	padding:5px 10px;
-	 padding-right: 16px;
 }
 
 #button {
-	font-size: 14px;
+	font-size: 15px;
 	background-color: #e5e4d7;
 }
 

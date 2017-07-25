@@ -1,0 +1,95 @@
+﻿<!-- Trigger the modal with a button -->
+<div id="addNoteButton">
+<button type="button" class="btn btn-primary btn-lg pull-right" ng-click="addNote()">
+<strong>&plus;</strong>
+</button>
+<div class="clearfix"></div>
+</div>
+
+<div id="selectNoteButton" ng-hide="selectingNote">
+<button type="button" class="btn btn-danger btn-lg pull-right" ng-click="selectNote()">
+<strong>&minus;</strong>
+</button>
+<div class="clearfix"></div>
+</div>
+
+<div id="deleteNoteButton" ng-show="selectingNote">
+<button type="button" class="btn btn-danger btn-lg pull-right" ng-click="deleteNote()">
+<strong>&times;</strong>
+</button>
+<div class="clearfix"></div>
+</div>
+
+
+<!-- Modal -->
+<div id="noteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-default">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Note</h4>
+      </div>
+      <div class="modal-body">
+      	<form role="form" ng-submit="saveNote()">
+		  <div class="form-group">
+		    <label for="noteTitle">Title:</label>
+		    <input type="text" class="form-control" id="noteTitle" ng-model="noteTitle" minlength="5" maxlength="50" required></input>
+		  </div>
+		  <div class="form-group">
+		    <label for="noteContent">Content:</label>
+		    <textarea class="form-control" id="noteContent" ng-model="noteContent" minlength="10" maxlength="300" required></textarea>
+		  </div>
+		  <div class="form-group">
+		  	<label for="notePriority">Priority:</label>
+			<div id="notePriority">
+			<label class="radio-inline">
+		    	<input type="radio" name="priority" ng-model="notePriority" value="1" >1 (High)
+		    </label>
+		    <label class="radio-inline">
+		      	<input type="radio" name="optradio" ng-model="notePriority" value="2" >2 (Normal)
+		    </label>
+		    <label class="radio-inline">
+		      	<input type="radio" name="optradio" ng-model="notePriority" value="3" >3 (Low)
+		    </label>
+		    </div>
+		  </div>
+		  <hr/>
+		  <div class="buttons pull-right">
+			  <button type="submit" class="btn btn-success">Save</button>
+			  <button type="cancel" class="btn btn-danger" data-dismiss="modal">
+			  <span ng-show="editingNote">Delete</span>
+			  <span ng-hide="editingNote">Cancel</span>
+			  </button>
+		  </div>
+		  <div class="clearfix"></div>
+		</form>
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+<div class="" id="noteList" >
+<div class="clearfix"></div>
+<div class="well" ng-hide="notes.length">No Notes to display. Add a Note !</div>
+<div class="note col-sm-6" ng-show="notes.length" ng-repeat="note in notes track by $index">
+<div class="panel panel-default clearfix" ng-class="{ 'panel-danger': note.priority == 1, 'panel-info': note.priority == 2, 'panel-success': note.priority == 3}">
+  <div class="panel-heading" ng-init="noteSelection[$index]=false">
+    <h3 class="panel-title pull-left"><input ng-show="selectingNote" type="checkbox" ng-model="noteSelection[$index]" />{{note.title}}</h3>
+    <span class="pull-right">
+    	<button class="btn btn-primary btn-xs" ng-click="editNote($index, $event)"><i class="glyphicon glyphicon-pencil"></i></button>
+    	<button class="btn btn-danger btn-xs" ng-click="removeNote($index, $event)"><i class="glyphicon glyphicon-trash"></i></button>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+  <div class="panel-body">
+    {{note.content}}
+  </div>
+  <div class="panel-footer">
+    <span><i class="glyphicon glyphicon-stats"></i>&nbsp;{{note.priority}}</span>
+    <span><i class="glyphicon glyphicon-hourglass"></i>&nbsp;{{note.timestamp | date:'medium'}}</span>
+  </div>
+ </div>
+</div>
+</div>

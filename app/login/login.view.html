@@ -5,9 +5,9 @@
 
    <div id="login">
 
-   		<fieldset>
+   		
 		
-			<legend><h4>&nbsp;&nbsp;&nbsp; Log In: </h4></legend>
+			
 
           		<form name="form" ng-submit="vm.login()" role="form">
        
@@ -23,16 +23,16 @@
 			        	     <input name="password" class="buggy" type="password" id="Password" placeholder="enter password" required ng-model="vm.password"/><span ng-show="form.password.$dirty && form.password.$error.required" >Password is required</span>
 		        	    </div>
 		    	    
-		    	    </div><br><br><br>
+		    	    </div><br><br><br><br>
 		    	    
 
 					<div>
-		            	<button type="submit" ng-disabled="form.$invalid || vm.dataLoading" id="button">Log In</button><br><br>
-						 <strong>Don't have an account? <a href="#!/register">Register</a></strong><br>
+		            	<button type="submit"  ng-disabled="form.$invalid || vm.dataLoading" id="button">Log In</button><br><br><br>
+						 <strong>Don't have an account? <a href="#/register">Register</a></strong><br>
        				</div>
 
            		 </form>
-         </fieldset> 
+        
 	 </div>
  </body>
 

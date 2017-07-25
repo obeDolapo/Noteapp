@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('noteApp')
+        .module('app')
         .controller('RegisterController', RegisterController);
 
     RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
@@ -14,7 +14,6 @@
         function register() {
             vm.dataLoading = true;
             UserService.Create(vm.user)
-           //UserService.Create(vm.email)
                 .then(function (response) {
                     if (response.success) {
                         FlashService.Success('Registration successful', true);

@@ -1,0 +1,7 @@
+{
+	"users":[
+		{"username":"Alice","password":"Alice","firstName":"Alice","lastName":"Alice","id":1},
+		{"username":"Bob","password":"Bob","firstName":"Bob","lastName":"Bob","id":2},
+		{"username":"Charlie","password":"Charlie","firstName":"Charlie","lastName":"Charlie","id":3}
+	]
+}

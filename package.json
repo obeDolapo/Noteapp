@@ -1,0 +1,31 @@
+{
+  "name": "notakingapp",
+  "version": "1.0.0",
+  "description": "angularjs app using bootstrap and local storage",
+  "main": "index.js",
+  "dependencies": {
+    "ecstatic": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obeDolapo/Noteapp.git"
+  },
+  "keywords": [
+    "angularjs",
+    "app",
+    "using",
+    "bootstap",
+    "and",
+    "localstorage"
+  ],
+  "bugs": {
+    "url": "https://github.com/obeDolapo/Noteapp/issues"
+  },
+  "homepage": "https://github.com/obeDolapo/Noteapp#readme"
+}

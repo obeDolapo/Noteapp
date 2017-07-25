@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('noteApp')
+        .module('app')
         .factory('FlashService', FlashService);
 
-    FlashService.$inject = ['$rootScope'];
-    function FlashService($rootScope) {
+    FlashService.$inject = ['$rootScope', '$timeout'];
+    function FlashService($rootScope, $timeout) {
         var service = {};
 
         service.Success = Success;
@@ -20,34 +20,40 @@
             $rootScope.$on('$locationChangeStart', function () {
                 clearFlashMessage();
             });
+        }
 
-            function clearFlashMessage() {
-                var flash = $rootScope.flash;
-                if (flash) {
-                    if (!flash.keepAfterLocationChange) {
-                        delete $rootScope.flash;
-                    } else {
-                        // only keep for a single location change
-                        flash.keepAfterLocationChange = false;
-                    }
+        function clearFlashMessage() {
+            var flash = $rootScope.flash;
+            if (flash) {
+                if (!flash.keepAfterLocationChange) {
+                    delete $rootScope.flash;
+                } else {
+                    // only keep for a single location change
+                    flash.keepAfterLocationChange = false;
                 }
             }
         }
 
-        function Success(message, keepAfterLocationChange) {
+        function Success(message, keepAfterLocationChange, timeout) {
             $rootScope.flash = {
                 message: message,
                 type: 'success', 
                 keepAfterLocationChange: keepAfterLocationChange
             };
+            if(timeout){
+                $timeout(clearFlashMessage, timeout);
+            }            
         }
 
-        function Error(message, keepAfterLocationChange) {
+        function Error(message, keepAfterLocationChange, timeout) {
             $rootScope.flash = {
                 message: message,
                 type: 'error',
                 keepAfterLocationChange: keepAfterLocationChange
             };
+            if(timeout){
+                $timeout(clearFlashMessage, timeout);
+            }
         }
     }
 
